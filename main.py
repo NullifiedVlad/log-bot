@@ -16,10 +16,15 @@ while not isCorrect:
     answer = int(input('--> '))
     if answer == 1:
         with open('config.py', 'w') as c:
+            # bot token
             token = input('Enter your bot token: ')
+            # server channel
             channel_id = input('Enter your channel id: ')
+            # file path
             path = input('Enter path to your file :')
+            # commands prefix
             prefix = input('Enter command prefix (like "/"): ')
+            # writing data
             c.write(f'''token = "{token}"
 channel = {channel_id}
 file = "{path}"
@@ -49,7 +54,7 @@ prefix = "{prefix}"
         async def on_ready():
             counter = 1
             print('[LOG] Online')
-            channel = bot.get_channel(711919810434433105)
+            channel = bot.get_channel(config.channel)
             await bot.change_presence(activity=discord.Game('Online!'))
             try:
                 with open(config.file, 'r') as f:
