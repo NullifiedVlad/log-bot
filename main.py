@@ -25,7 +25,7 @@ while not isCorrect:
             # server channel
             channel_id = input('Enter your channel id: ')
             # file path
-            path = input('Enter path to your file :')
+            path = input('Enter path to your file: ')
             # commands prefix
             prefix = input('Enter command prefix (like "/"): ')
             # writing data
