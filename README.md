@@ -21,7 +21,9 @@ a) Enter bot token
 b) Enter channel id
 
 c) Path to log file
+
 ```like this /opt/cathook/data/chat-vlad.csv```
+
 d) Enter command prefix
  
 5) Enter 2 option to run bot
