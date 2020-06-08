@@ -64,8 +64,8 @@ prefix = "{prefix}"
             print('[LOG] Bot is online!')
             try:
                 with open(config.file, 'r') as f:
-
                     line_on_check = f.readlines()[-1]
+
                 while True:
 
                     with open(config.file, 'r') as f:
