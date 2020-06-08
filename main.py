@@ -70,20 +70,25 @@ prefix = "{prefix}"
                         line = f.readlines()[-1]
 
                     if line != line_on_check and line != 'RELOAD':
-
+                        # editing log srting
                         line_on_check = line
                         line_on_send = line
 
                         line_on_send = line_on_send.replace('"', '')
-                        a = line_on_send.split(',')
+                        # making list
+                        message = line_on_send.split(',')
 
-                        await channel.send(str(f'[LOG] {a[2]} : {a[3]}'))
+                        # send message Author:Message
+                        await channel.send(str(f'[LOG] {message[2]} : {message[3]}'))
+
                         print(f'[LOG] Message was sent ({str(counter)})')
                         counter += 1
+                        # clean log file
                         with open(config.file, 'w') as f:
                             f.write('RELOAD')
                     else:
                         pass
+                    # scan delay
                     await asyncio.sleep(0.5)
 
             except Exception as e:
