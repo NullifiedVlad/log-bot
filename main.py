@@ -53,22 +53,30 @@ prefix = "{prefix}"
 
         @bot.event
         async def on_ready():
+
             counter = 1
-            print('[LOG] Online')
             channel = bot.get_channel(config.channel)
-            await bot.change_presence(activity=discord.Game('Online!'))
+            await bot.change_presence(activity=discord.Game('Team Fortress 2'))
+
+            print('[LOG] Bot is online!')
             try:
                 with open(config.file, 'r') as f:
+
                     line_on_check = f.readlines()[-1]
                 while True:
+
                     with open(config.file, 'r') as f:
+
                         line = f.readlines()[-1]
 
                     if line != line_on_check and line != 'RELOAD':
+
                         line_on_check = line
                         line_on_send = line
+
                         line_on_send = line_on_send.replace('"', '')
                         a = line_on_send.split(',')
+
                         await channel.send(str(f'[LOG] {a[2]} : {a[3]}'))
                         print(f'[LOG] Message was sent ({str(counter)})')
                         counter += 1
@@ -77,6 +85,8 @@ prefix = "{prefix}"
                     else:
                         pass
                     await asyncio.sleep(0.5)
+
             except Exception as e:
                 print(str(e))
+
         bot.run(config.token)
