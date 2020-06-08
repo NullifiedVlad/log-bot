@@ -1,2 +1,2 @@
-# tf2-cathook-discord-chat-sender
+# LOG-BOT
 Bot for send chat logs in discord channel
