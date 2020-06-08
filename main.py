@@ -1,4 +1,5 @@
 """
+How it must look:
 Enter your bot token: NzA5NDgzNTc2NzUxODE2NzA0.Xt57uw.EA7pbkNUle_YfPFeMHP71TJyBCE
 Enter your channel id: 711919810434433105
 Enter path to your file :/opt/cathook/data/chat-vlad.csv
