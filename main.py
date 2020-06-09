@@ -107,3 +107,7 @@ prefix = "{prefix}"
                 print('[ERROR] CHAT LOG FILE NOT FOUND!')
 
         bot.run(config.token)
+    elif answer == 3:
+        exit()
+    else:
+        pass
