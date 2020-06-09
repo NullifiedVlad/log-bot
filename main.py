@@ -98,7 +98,7 @@ prefix = "{prefix}"
                     # scan delay
                     await asyncio.sleep(0.2)
 
-            except Exception as e:
-                print(str(e))
+            except FileNotFoundError:
+                print('[ERROR] CHAT LOG FILE NOT FOUND!')
 
         bot.run(config.token)
