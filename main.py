@@ -93,7 +93,7 @@ prefix = "{prefix}"
                     else:
                         pass
                     # scan delay
-                    await asyncio.sleep(0.5)
+                    await asyncio.sleep(0.2)
 
             except Exception as e:
                 print(str(e))
