@@ -44,13 +44,16 @@ prefix = "{prefix}"
         except ModuleNotFoundError:
             print('[ERROR] PLEASE INSTALL DISCORD.PY')
 
-        print('[LOG] Imoprting user setting...')
+        print('[LOG] Importing user setting...')
 
         try:
             import config
         except ModuleNotFoundError:
             print('[ERROR] CREATE CONFIGURATION FILE')
             exit()
+        print('[LOG] Importing datetime...')
+        import datetime
+
         bot = commands.Bot(command_prefix='/')  # префикс для комманд
 
 
@@ -67,7 +70,7 @@ prefix = "{prefix}"
                     line_on_check = f.readlines()[-1]
 
                 while True:
-
+                    date = datetime.datetime.now()
                     with open(config.file, 'r') as f:
 
                         line = f.readlines()[-1]
@@ -83,7 +86,7 @@ prefix = "{prefix}"
                         message = line_on_send.split(',')
 
                         # send message Author:Message
-                        await channel.send(str(f'[LOG] {message[2]} : {message[3]}'))
+                        await channel.send(str(f'[LOG {date.hour} : {date.minute}] {message[2]} : {message[3]}'))
 
                         print(f'[LOG] Message was sent ({str(counter)})')
                         counter += 1
