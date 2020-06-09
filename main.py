@@ -11,7 +11,7 @@ isCorrect = False
 
 while not isCorrect:
     print('''
-+=============================+    
++==============================+    
 | 1) Create configuration file.|
 | 2) Run bot                   | 
 | 3) Exit                      |
