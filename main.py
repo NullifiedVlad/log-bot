@@ -90,8 +90,12 @@ prefix = "{prefix}"
                         # making list
                         message = line_on_send.split(',')
 
+                        if int(len(str(date.minute))) == 1:
+                            minute = '0' + str(date.minute)
+                        else:
+                            minute = str(date.minute)
                         # send message Author:Message
-                        await channel.send(str(f'[LOG {date.hour} : {date.minute}] {message[2]} : {message[3]}'))
+                        await channel.send(str(f'[LOG {date.hour}:{minute}] {message[2]} : {message[3]}'))
 
                         print(f'[LOG] Message was sent ({str(counter)})')
                         counter += 1
@@ -101,7 +105,7 @@ prefix = "{prefix}"
                     else:
                         pass
                     # scan delay
-                    await asyncio.sleep(0.2)
+                    await asyncio.sleep(0.1)
 
             except FileNotFoundError:
                 print('[ERROR] CHAT LOG FILE NOT FOUND!')
