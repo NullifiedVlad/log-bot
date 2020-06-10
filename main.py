@@ -50,7 +50,6 @@ prefix = "{prefix}"
             print('[ERROR] PLEASE INSTALL DISCORD.PY')
 
         print('[LOG] Importing user setting...')
-
         try:
             import config
         except ModuleNotFoundError:
@@ -60,7 +59,6 @@ prefix = "{prefix}"
         import datetime
 
         bot = commands.Bot(command_prefix='/')  # префикс для комманд
-
 
         @bot.event
         async def on_ready():
