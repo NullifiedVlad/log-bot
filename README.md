@@ -14,7 +14,7 @@ Bot for send chat logs in discord channel
 
 ```python3 main.py```
 
-4)Fist enter number 1
+4)First enter number 1
 
 a) Enter bot token
 
