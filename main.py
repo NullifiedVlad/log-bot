@@ -1,3 +1,4 @@
+
 """
 How it must look:
 Enter your bot token: NzA5NDgzNTc2NzUxODE2NzA0.Xt57uw.EA7pbkNUle_YfPFeMHP71TJyBCE
@@ -13,7 +14,7 @@ print('''
 ██║     ██║   ██║██║  ███╗█████╗██████╔╝██║   ██║   ██║   
 ██║     ██║   ██║██║   ██║╚════╝██╔══██╗██║   ██║   ██║   
 ███████╗╚██████╔╝╚██████╔╝      ██████╔╝╚██████╔╝   ██║   
-╚══════╝ ╚═════╝  ╚═════╝       ╚═════╝  ╚═════╝    ╚═╝   ''')
+╚══════╝ ╚═════╝  ╚═════╝       ╚═════╝  ╚═════╝    ╚═╝  by NullifiedVlad  ''')
 while not isCorrect:
     print('''
 +==============================+    
@@ -41,20 +42,23 @@ prefix = "{prefix}"
             ''')
             answer = None
     elif answer == 2:
-        print('[LOG] Importing discord.py...')
+        print('[LOG] Importing modules')
         try:
             import discord
             import asyncio
             from discord.ext import commands
+
         except ModuleNotFoundError:
             print('[ERROR] PLEASE INSTALL DISCORD.PY')
 
-        print('[LOG] Importing user setting...')
         try:
+            print('[LOG] Importing user setting...')
             import config
+
         except ModuleNotFoundError:
             print('[ERROR] CREATE CONFIGURATION FILE')
             exit()
+
         print('[LOG] Importing datetime...')
         import datetime
 
@@ -64,6 +68,7 @@ prefix = "{prefix}"
         async def on_ready():
 
             counter = 1
+
             channel = bot.get_channel(config.channel)
             await bot.change_presence(activity=discord.Game('Team Fortress 2'))
 
@@ -93,7 +98,7 @@ prefix = "{prefix}"
                         else:
                             minute = str(date.minute)
                         # send message Author:Message
-                        await channel.send(str(f'[LOG {date.hour}:{minute}] {message[2]} : {message[3]}'))
+                        await channel.send(str(f'```[LOG {date.hour}:{minute}]``` **{message[2]}** : {message[3]}'))
 
                         print(f'[LOG] Message was sent ({str(counter)})')
                         counter += 1
