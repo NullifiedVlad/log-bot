@@ -83,7 +83,7 @@ prefix = "{prefix}"
 
                         line = f.readlines()[-1]
 
-                    if line != line_on_check and line != 'RELOAD':
+                    if line != line_on_check and line != 'reload':
                         # editing log string
 
                         line_on_check = line
@@ -98,13 +98,13 @@ prefix = "{prefix}"
                         else:
                             minute = str(date.minute)
                         # send message Author:Message
-                        await channel.send(str(f'```[LOG {date.hour}:{minute}]``` **{message[2]}** : {message[3]}'))
+                        await channel.send(str(f'`[LOG {date.hour}:{minute}]` **{message[2]}** : {message[3]}'))
 
                         print(f'[LOG] Message was sent ({str(counter)})')
                         counter += 1
                         # clean log file
                         with open(config.file, 'w') as f:
-                            f.write('RELOAD')
+                            f.write('reload')
                     else:
                         pass
                     # scan delay
